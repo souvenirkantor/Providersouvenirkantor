@@ -1,0 +1,128 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Faq Section
+--------------------------------------------------------------*/
+.faq {
+  background-color: color-mix(in srgb, var(--surface-color), #f8f9fa 50%);
+
+  .faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    background-color: var(--surface-color);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 32px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px color-mix(in srgb, var(--default-color), transparent 95%);
+
+    &:hover {
+      box-shadow: 0 4px 16px color-mix(in srgb, var(--default-color), transparent 90%);
+      border-color: color-mix(in srgb, var(--accent-color), transparent 70%);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .question-wrapper {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .icon-wrapper {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 4px;
+
+      i {
+        color: var(--accent-color);
+        font-size: 24px;
+      }
+    }
+
+    .content-wrapper {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .question {
+      color: var(--heading-color);
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 16px;
+      font-family: var(--heading-font);
+    }
+
+    .answer {
+      p {
+        color: var(--default-color);
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      padding: 24px 20px;
+
+      .question-wrapper {
+        gap: 16px;
+      }
+
+      .icon-wrapper {
+        width: 40px;
+        height: 40px;
+
+        i {
+          font-size: 20px;
+        }
+      }
+
+      .question {
+        font-size: 16px;
+        margin-bottom: 12px;
+      }
+
+      .answer p {
+        font-size: 15px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      padding: 20px 16px;
+
+      .question-wrapper {
+        gap: 12px;
+      }
+
+      .icon-wrapper {
+        width: 36px;
+        height: 36px;
+
+        i {
+          font-size: 18px;
+        }
+      }
+
+      .question {
+        font-size: 15px;
+      }
+
+      .answer p {
+        font-size: 14px;
+      }
+    }
+  }
+}
