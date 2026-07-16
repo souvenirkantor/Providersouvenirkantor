@@ -345,39 +345,46 @@ h6 {
     padding: 6px 10px;
     border-radius: 12px;
     box-shadow: 0 6px 18px rgba(10,12,30,0.06);
+    gap: 6px;
   }
 
-  .header .logo .sitename {
+  /* Logo area: beri ruang lebih bagi hamburger dan tombol CTA */
+  .header .logo {
+    flex: 0 1 auto;
+    min-width: 0;
+    gap: 6px;
+  }
+
+  .header .logo img {
+    max-height: 26px;
+    flex-shrink: 0;
+  }
+
+  .header .logo .sitename,
+  .header .logo h1 {
     display: inline-block;
-    font-size: 15px;
-    margin-left: 6px;
+    font-size: 14px;
+    margin-left: 4px;
     font-weight: 600;
     color: var(--heading-color);
     vertical-align: middle;
-    max-width: 120px;
+    max-width: 140px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  .header .logo img {
-    max-height: 28px;
-  }
-
+  /* Tombol CTA proporsional di mobile */
   .header .btn-getstarted {
-    padding: 6px 10px;
-    font-size: 13px;
-    margin-left: 8px;
-    border-radius: 22px;
+    padding: 6px 12px;
+    font-size: 12px;
+    margin-left: 4px;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
-/* Desktop: pin CTA to the far right and ensure nav centers safely */
-@media (min-width: 1200px) {
-  .header .btn-getstarted { margin-left: auto; }
-  .navmenu ul { gap: 6px; }
-}
-
-  /* make sections render immediately on small screens to avoid large placeholders */
+  /* make sections render immediately on small screens */
   main > section:not(.hero):not(.blog-hero):not(.article-header) {
     content-visibility: visible;
     contain-intrinsic-size: auto;
@@ -403,6 +410,29 @@ h6 {
     padding: 10px 16px;
     font-size: 14px;
   }
+}
+
+/* Layar sangat sempit (≤480px): sembunyikan teks brand, tampilkan logo saja */
+@media (max-width: 480px) {
+  .header .logo .sitename,
+  .header .logo h1 {
+    display: none;
+  }
+
+  .header .logo {
+    flex: 0 0 auto;
+  }
+
+  .header .btn-getstarted {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+}
+
+/* Desktop: pin CTA ke kanan */
+@media (min-width: 1200px) {
+  .header .btn-getstarted { margin-left: auto; }
+  .navmenu ul { gap: 6px; }
 }
 
 /* iPad / small laptop tweaks for better proportions */
@@ -2154,6 +2184,9 @@ section,
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px color-mix(in srgb, var(--default-color), transparent 95%);
+  /* Flex column agar tombol selalu di bawah */
+  display: flex;
+  flex-direction: column;
 }
 
 .services .services-grid .service-card .service-icon {
@@ -2185,6 +2218,7 @@ section,
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   margin-bottom: 1.5rem;
+  flex: 1; /* Dorong link ke bawah */
 }
 
 .services .services-grid .service-card .service-link {
@@ -2196,6 +2230,7 @@ section,
   font-weight: 500;
   font-size: 0.9rem;
   transition: all 0.3s ease;
+  margin-top: auto; /* Selalu menempel di bawah card */
 }
 
 .services .services-grid .service-card .service-link i {
@@ -5186,16 +5221,32 @@ html.order-modal-open, body.order-modal-open {
 /* Compact header override — last rules to enforce smaller navbar/logo when needed */
 .header .header-container { padding: 6px 12px; gap: 10px; }
 .header .logo img { max-height: 28px; }
-.header .logo h1 { font-size: 18px; max-width: 140px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* Desktop: max-width cukup untuk 'CorporateGifts ID' */
+.header .logo h1 { font-size: 18px; max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .header .navmenu { min-width: 0; }
 .navmenu ul { gap: 6px; }
 .navmenu a, .navmenu a:focus { font-size: 13px !important; padding: 6px 8px !important; white-space: nowrap; }
 .header .btn-getstarted { margin-left: auto !important; padding: 8px 14px !important; font-size: 13px !important; }
 
+/* Tablet (769px–1199px): sedikit lebih kecil tapi masih tampil penuh */
 @media (max-width: 1199px) {
   .navmenu a, .navmenu a:focus { font-size: 14px !important; padding: 8px 10px !important; }
-  .header .logo h1 { font-size: 16px; max-width: 120px; }
-  .header .logo img { max-height: 30px; }
+  .header .logo h1 { font-size: 15px; max-width: 180px; }
+  .header .logo img { max-height: 28px; }
+}
+
+/* Mobile (≤768px): override compact rule agar tidak konflik */
+@media (max-width: 768px) {
+  .header .header-container { padding: 6px 10px; gap: 6px; }
+  .header .logo h1 { font-size: 14px; max-width: 140px; }
+  .header .logo img { max-height: 26px; }
+  .header .btn-getstarted { padding: 6px 12px !important; font-size: 12px !important; }
+}
+
+/* Layar sangat kecil (≤480px): sembunyikan teks, logo saja */
+@media (max-width: 480px) {
+  .header .logo h1 { display: none; }
+  .header .btn-getstarted { padding: 5px 10px !important; font-size: 11px !important; }
 }
 
 /* Typography adjustments: scale down headings and hero title site-wide */
