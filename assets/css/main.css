@@ -5161,6 +5161,29 @@ html.order-modal-open, body.order-modal-open {
   padding: 18px 20px;
   margin: 28px 0;
 }
+.baca-juga-box {
+  border-left: 4px solid var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 94%);
+  border-radius: 0 8px 8px 0;
+  padding: 14px 20px;
+  margin: 28px 0;
+  font-size: 0.97rem;
+  line-height: 1.5;
+}
+.baca-juga-box strong {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+.baca-juga-box a {
+  color: var(--heading-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.baca-juga-box a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
 .toc-list a {
   display: block;
   padding: 8px 0;
