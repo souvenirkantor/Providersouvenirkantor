@@ -5038,6 +5038,8 @@ html.order-modal-open, body.order-modal-open {
   background: var(--surface-color);
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
   transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 .blog-card:hover {
   transform: translateY(-6px);
@@ -5050,6 +5052,9 @@ html.order-modal-open, body.order-modal-open {
 }
 .blog-card-body {
   padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 .blog-card h3,
 .featured-post h2 {
@@ -5071,6 +5076,7 @@ html.order-modal-open, body.order-modal-open {
   gap: 8px;
   color: var(--accent-color);
   font-weight: 800;
+  margin-top: auto;
 }
 .blog-sidebar {
   position: sticky;
