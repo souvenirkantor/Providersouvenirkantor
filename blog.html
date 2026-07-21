@@ -108,7 +108,7 @@
       <div class="container">
         <div class="row g-4">
           <div class="col-lg-8">
-            <div class="row g-4">              <div class="col-md-6" data-aos="fade-up" data-aos-delay="250">
+            <div class="row g-4" id="blog-grid">              <div class="col-md-6" data-aos="fade-up" data-aos-delay="250">
                 <article class="blog-card">
                   <a href="blog/souvenir-ramah-lingkungan.html"><img src="images/Souvenir_Ramah_Lingkungan_Panduan_Lengkap_2026.webp" alt="Souvenir ramah lingkungan panduan lengkap 2026" loading="lazy" decoding="async"></a>
                   <div class="blog-card-body">
@@ -206,6 +206,10 @@
               </div>
 
             </div><!-- /.row g-4 inner -->
+
+            <!-- Paginasi Blog -->
+            <nav id="blog-pagination" aria-label="Navigasi halaman blog"></nav>
+
           </div><!-- /.col-lg-8 -->
 
           <aside class="col-lg-4">
@@ -357,17 +361,119 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
   <script src="assets/js/main.js" defer></script>
   <script>
-    document.querySelector('.blog-search input')?.addEventListener('input', function () {
-      const query = this.value.toLowerCase().trim();
-      document.querySelectorAll('.featured-post, .blog-card').forEach(function (card) {
-        if (!card.classList.contains('featured-post')) {
-          card.closest('[class*="col-"]')?.classList.remove('d-none');
+    (function () {
+      const ITEMS_PER_PAGE = 20;
+      const grid = document.getElementById('blog-grid');
+      const paginationEl = document.getElementById('blog-pagination');
+      const searchInput = document.querySelector('.blog-search input');
+
+      // Ambil semua kartu artikel (col wrapper)
+      const allCards = Array.from(grid.querySelectorAll('[class*="col-"]'));
+      let filteredCards = allCards.slice();
+      let currentPage = 1;
+
+      function getTotalPages() {
+        return Math.max(1, Math.ceil(filteredCards.length / ITEMS_PER_PAGE));
+      }
+
+      function renderPage(page) {
+        currentPage = Math.min(Math.max(1, page), getTotalPages());
+        const start = (currentPage - 1) * ITEMS_PER_PAGE;
+        const end = start + ITEMS_PER_PAGE;
+
+        // Sembunyikan semua kartu dulu
+        allCards.forEach(function (col) { col.style.display = 'none'; });
+
+        // Tampilkan hanya kartu di halaman aktif
+        filteredCards.slice(start, end).forEach(function (col) { col.style.display = ''; });
+
+        renderPagination();
+
+        // Scroll ke atas grid jika bukan halaman pertama
+        if (page > 1) {
+          grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-        const match = card.textContent.toLowerCase().includes(query);
-        const wrapper = card.classList.contains('featured-post') ? card : (card.closest('[class*="col-"]') || card);
-        wrapper.classList.toggle('d-none', query.length > 0 && !match);
-      });
-    });
+      }
+
+      function renderPagination() {
+        const total = getTotalPages();
+
+        // Sembunyikan paginasi kalau cuma 1 halaman
+        if (total <= 1) {
+          paginationEl.innerHTML = '';
+          return;
+        }
+
+        let html = '<ul class="blog-pagination-list">';
+
+        // Tombol sebelumnya
+        html += '<li>';
+        html += '<button class="blog-page-btn" aria-label="Halaman sebelumnya" ' + (currentPage === 1 ? 'disabled' : '') + ' data-page="' + (currentPage - 1) + '">';
+        html += '<i class="bi bi-chevron-left"></i>';
+        html += '</button></li>';
+
+        // Nomor halaman (dengan ellipsis jika terlalu banyak)
+        const range = getPageRange(currentPage, total);
+        range.forEach(function (p) {
+          if (p === '...') {
+            html += '<li><span class="blog-page-ellipsis">…</span></li>';
+          } else {
+            html += '<li>';
+            html += '<button class="blog-page-btn' + (p === currentPage ? ' active' : '') + '" data-page="' + p + '" aria-label="Halaman ' + p + '" aria-current="' + (p === currentPage ? 'page' : 'false') + '">' + p + '</button>';
+            html += '</li>';
+          }
+        });
+
+        // Tombol berikutnya
+        html += '<li>';
+        html += '<button class="blog-page-btn" aria-label="Halaman berikutnya" ' + (currentPage === total ? 'disabled' : '') + ' data-page="' + (currentPage + 1) + '">';
+        html += '<i class="bi bi-chevron-right"></i>';
+        html += '</button></li>';
+
+        html += '</ul>';
+        paginationEl.innerHTML = html;
+
+        // Event listener tombol
+        paginationEl.querySelectorAll('.blog-page-btn:not([disabled])').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            renderPage(parseInt(this.dataset.page, 10));
+          });
+        });
+      }
+
+      function getPageRange(current, total) {
+        if (total <= 7) {
+          return Array.from({ length: total }, function (_, i) { return i + 1; });
+        }
+        var pages = [];
+        if (current <= 4) {
+          pages = [1, 2, 3, 4, 5, '...', total];
+        } else if (current >= total - 3) {
+          pages = [1, '...', total - 4, total - 3, total - 2, total - 1, total];
+        } else {
+          pages = [1, '...', current - 1, current, current + 1, '...', total];
+        }
+        return pages;
+      }
+
+      // Pencarian — filter kartu lalu render ulang ke halaman 1
+      if (searchInput) {
+        searchInput.addEventListener('input', function () {
+          const query = this.value.toLowerCase().trim();
+          if (query.length === 0) {
+            filteredCards = allCards.slice();
+          } else {
+            filteredCards = allCards.filter(function (col) {
+              return col.textContent.toLowerCase().includes(query);
+            });
+          }
+          renderPage(1);
+        });
+      }
+
+      // Render awal
+      renderPage(1);
+    })();
   </script>
 </body>
 
