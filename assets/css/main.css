@@ -5121,6 +5121,64 @@ html.order-modal-open, body.order-modal-open {
   color: var(--heading-color);
   font-weight: 700;
 }
+
+/* ---- Paginasi Blog ---- */
+#blog-pagination {
+  margin-top: 32px;
+}
+.blog-pagination-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.blog-page-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 8px;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 82%);
+  background: var(--surface-color);
+  color: var(--heading-color);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+.blog-page-btn:hover:not([disabled]) {
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+.blog-page-btn.active {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #fff;
+  cursor: default;
+}
+.blog-page-btn[disabled] {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.blog-page-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  font-size: 1rem;
+}
+
+
 .article-header {
   padding: 34px 0 18px;
 }
