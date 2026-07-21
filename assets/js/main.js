@@ -1008,3 +1008,13 @@
   }
 
 })();
+
+/**
+ * Mobile Article Table of Contents — collapsible toggle
+ * Called via onclick on the button inside .mobile-toc
+ */
+function toggleMobileToc(btn) {
+  var toc = btn.closest('.mobile-toc');
+  var isOpen = toc.classList.toggle('is-open');
+  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+}
