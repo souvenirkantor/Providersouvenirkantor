@@ -4990,6 +4990,7 @@ html.order-modal-open, body.order-modal-open {
 .article-tag {
   display: inline-flex;
   align-items: center;
+  align-self: flex-start;
   border-radius: 50px;
   padding: 8px 13px;
   background: var(--surface-color);
