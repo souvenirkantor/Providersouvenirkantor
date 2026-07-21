@@ -5061,10 +5061,22 @@ html.order-modal-open, body.order-modal-open {
 .featured-post h2 {
   font-size: clamp(1.25rem, 2vw, 1.85rem);
   margin-bottom: 10px;
+  line-height: 1.4;
+}
+.blog-card h3 {
+  display: flex;
+  align-items: center;
+  min-height: calc(1.4em * 3);
 }
 .blog-card h3 a,
 .featured-post h2 a {
   color: var(--heading-color);
+}
+.blog-card h3 a {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .blog-card p,
 .featured-post p {
