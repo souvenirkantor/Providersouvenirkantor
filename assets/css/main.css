@@ -1278,6 +1278,31 @@ body.order-modal-open .hero .hero-actions .btn-primary {
   text-decoration: underline;
 }
 
+/* Custom typography for article pages - Adjusted */
+.article-page .article-header h1 {
+  font-size: 40px !important;
+  font-weight: 700 !important;
+}
+.article-page .article-header .article-excerpt {
+  font-size: 18px !important;
+  line-height: 1.8 !important;
+}
+.article-page .article-body h2 {
+  font-size: 28px !important;
+  font-weight: 700 !important;
+}
+.article-page .article-body h3 {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+}
+.article-page .article-body p,
+.article-page .article-body li,
+.article-page .article-body ul,
+.article-page .article-body ol {
+  font-size: 15px !important;
+}
+
+
 /* Footer services small layout */
 .footer-services ul { list-style: disc; margin-left: 18px; padding-left: 10px; margin-bottom: 12px; }
 .footer-services ul li { margin-bottom: 6px; color: color-mix(in srgb, var(--default-color), transparent 30%); font-size: 15px; }
