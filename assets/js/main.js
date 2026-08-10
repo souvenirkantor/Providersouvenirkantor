@@ -148,12 +148,13 @@
   function aosInit() {
     if (typeof AOS === 'undefined') return;
     var isSmall = (window.innerWidth || document.documentElement.clientWidth) <= 768;
-    var duration = isSmall ? 350 : 600;
+    var duration = isSmall ? 250 : 350;
     AOS.init({
       duration: duration,
       easing: 'ease-in-out',
       once: true,
-      mirror: false
+      mirror: false,
+      offset: 50
     });
     try { document.body.classList.add('aos-initialized'); } catch (e) { /* noop */ }
   }
