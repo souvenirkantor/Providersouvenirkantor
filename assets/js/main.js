@@ -1,11 +1,3 @@
-/**
-* Template Name: Landio
-* Template URL: https://bootstrapmade.com/landio-bootstrap-landing-page-template/
-* Updated: Sep 06 2025 with Bootstrap v5.3.8
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 (function() {
   "use strict";
 
@@ -71,7 +63,7 @@
     if (!list) return;
 
     list.innerHTML = `
-      <li><a href="${relPrefix}index.html"${currentPage === 'index.html' ? ' class="active"' : ''}>Beranda</a></li>
+      <li><a href="/"${currentPage === 'index.html' ? ' class="active"' : ''}>Beranda</a></li>
       <li><a href="${relPrefix}about.html"${currentPage === 'about.html' ? ' class="active"' : ''}>Tentang Kami</a></li>
       <li><a href="${relPrefix}katalog.html"${currentPage === 'katalog.html' ? ' class="active"' : ''}>Katalog</a></li>
       <li><a href="${relPrefix}blog.html"${isBlogPage ? ' class="active"' : ''}>Blog</a></li>
@@ -363,7 +355,7 @@
         var name = lower.split('/').pop() || '';
         if (/^(profil|profi|profile)/.test(name)) return;
         // otherwise replace with a small logo fallback to avoid broken images
-        img.src = 'images/Logo.webp';
+        img.src = 'images/logo.webp';
         img.setAttribute('data-fallback-heic', '1');
       });
     } catch (e) { /* noop */ }
@@ -414,7 +406,7 @@
         if (layananLi && layananLi.parentNode) {
           layananLi.parentNode.insertBefore(li, layananLi);
         } else {
-          var berandaA = navUl.querySelector('a[href$="index.html"]');
+          var berandaA = navUl.querySelector('a[href="/"]');
           var insertAfter = berandaA ? berandaA.closest('li') : null;
           if (insertAfter && insertAfter.parentNode) insertAfter.parentNode.insertBefore(li, insertAfter.nextSibling);
           else navUl.appendChild(li);
@@ -454,7 +446,7 @@
       '<div class="order-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="order-modal-title">',
       '  <button type="button" class="order-modal-close" aria-label="Tutup" data-close-modal>&times;</button>',
       '  <div class="order-modal-header">',
-      '    <div class="order-modal-logo"><img src="images/Logo.webp" alt="SouvenirPro"></div>',
+      '    <div class="order-modal-logo"><img src="images/logo.webp" alt="SouvenirPro"></div>',
       '    <h3 id="order-modal-title">Mau mulai dari mana?</h3>',
       '    <p>Pilih langkah yang paling sesuai. Kamu bisa langsung mengetik pesan atau pilih opsi cepat di bawah.</p>',
       '  </div>',
@@ -656,7 +648,7 @@
     if (!oldFloat || document.getElementById('wa-widget')) return;
 
     var pageIcon = document.querySelector('link[rel="icon"]');
-    var logoSrc = pageIcon ? pageIcon.href : '/images/Logo.webp';
+    var logoSrc = pageIcon ? pageIcon.href : '/images/logo.webp';
 
     var widget = document.createElement('div');
     widget.id = 'wa-widget';

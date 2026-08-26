@@ -23,7 +23,7 @@
       '<div class="order-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="order-modal-title">',
       '  <button type="button" class="order-modal-close" aria-label="Tutup" data-close-modal>&times;</button>',
       '  <div class="order-modal-header">',
-      '    <div class="order-modal-logo"><img src="images/Logo.webp" alt="SouvenirPro"></div>',
+      '    <div class="order-modal-logo"><img src="images/logo.webp" alt="SouvenirPro"></div>',
       '    <h3 id="order-modal-title">Mau mulai dari mana?</h3>',
       '    <p>Pilih langkah yang paling sesuai. Tidak semua tombol harus langsung ke WhatsApp.</p>',
       '  </div>',
@@ -103,7 +103,7 @@
     if (!oldFloat || document.getElementById('wa-widget')) return;
 
     var pageIcon = document.querySelector('link[rel="icon"]');
-    var logoSrc = pageIcon ? pageIcon.href : '/images/Logo.webp';
+    var logoSrc = pageIcon ? pageIcon.href : '/images/logo.webp';
 
     var widget = document.createElement('div');
     widget.id = 'wa-widget';
@@ -175,3 +175,4 @@
     enhanceWhatsAppFloat();
   });
 })();
+
