@@ -75,6 +75,7 @@
           <li><a href="${relPrefix}seminar-kit.html">Seminar Kit</a></li>
         </ul>
       </li>
+      <li class="d-xl-none text-center" style="margin-top: 15px; padding: 0 15px;"><a class="btn-getstarted" href="https://wa.me/6288989643555?text=Halo,%20saya%20ingin%20pesan%20souvenir" style="display: block; width: 100%;">Pesan Sekarang</a></li>
     `;
   }
 

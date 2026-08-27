@@ -5496,3 +5496,20 @@ h6 { font-size: 0.9rem; }
 .hero-title .line-3 { max-width: 36%; }
 .hero-title .line-2, .hero-title .line-3 { text-wrap: normal; }
 .hero-title .hero-line { word-break: keep-all; }
+
+
+/* --- Fix Mobile Header Button --- */
+@media (max-width: 1199px) {
+  .header-container > .btn-getstarted {
+    display: none !important;
+  }
+}
+
+
+/* --- Push Mobile Nav Toggle to Right --- */
+@media (max-width: 1199px) {
+  .header .navmenu {
+    justify-content: flex-end !important;
+    width: 100%;
+  }
+}
