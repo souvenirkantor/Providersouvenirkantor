@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Core Pages -->
   <url>
     <loc>https://providersouvenirkantor.web.id/</loc>
     <lastmod>2026-07-15</lastmod>
@@ -33,12 +32,10 @@
   </url>
   <url>
     <loc>https://providersouvenirkantor.web.id/blog.html</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Service Pages -->
   <url>
     <loc>https://providersouvenirkantor.web.id/souvenir-kantor.html</loc>
     <lastmod>2026-07-15</lastmod>
@@ -63,8 +60,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Product Pages -->
   <url>
     <loc>https://providersouvenirkantor.web.id/tumbler-custom.html</loc>
     <lastmod>2026-07-15</lastmod>
@@ -131,8 +126,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Blog Posts -->
   <url>
     <loc>https://providersouvenirkantor.web.id/blog/kalender-meja-custom-souvenir-simpel-yang-bertahan-sepanjang-tahun.html</loc>
     <lastmod>2026-09-04T08:00:00+07:00</lastmod>
@@ -435,8 +428,19 @@
   <url>
     <loc>https://providersouvenirkantor.web.id/blog/panduan-custom-logo-pada-souvenir-kantor.html</loc>
     <lastmod>2026-08-29T08:00:00+07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://providersouvenirkantor.web.id/blog/mug-custom-souvenir-klasik-yang-masih-setia-menemani-meja-kerja.html</loc>
+    <lastmod>2026-09-05T08:00:00+07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://providersouvenirkantor.web.id/blog/flashdisk-custom-souvenir-kantor-praktis-untuk-transfer-data.html</loc>
+    <lastmod>2026-09-05T08:00:00+07:00</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 </urlset>
-
-
