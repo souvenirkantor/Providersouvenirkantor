@@ -294,7 +294,7 @@ h6 {
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .header {
     padding-top: 10px;
   }
@@ -302,21 +302,32 @@ h6 {
   .header .header-container {
     margin-left: 10px;
     margin-right: 10px;
-    padding: 10px 5px 10px 15px;
+    padding: 10px 12px 10px 15px;
+    gap: 10px;
   }
 
+  /* Logo: kiri, flex-shrink supaya tidak dorong elemen lain */
   .header .logo {
     order: 1;
+    flex: 0 1 auto;
+    min-width: 0;
   }
 
-  .header .btn-getstarted {
-    order: 2;
-    margin: 0 10px 0 0;
-    padding: 6px 15px;
-  }
-
+  /* Navmenu (berisi hamburger toggle) di tengah/kanan */
   .header .navmenu {
+    order: 2;
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  /* CTA button setelah navmenu (paling kanan) */
+  .header .btn-getstarted {
     order: 3;
+    margin: 0;
+    padding: 6px 15px;
+    flex-shrink: 0;
   }
 }
 
