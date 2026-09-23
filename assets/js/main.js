@@ -119,13 +119,15 @@
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  if (scrollTop) {
+    scrollTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
-  });
+  }
 
   // ensure initial state runs as soon as DOM is ready
   if (document.readyState === 'loading') {
@@ -441,7 +443,7 @@
     var modal = document.createElement('div');
     modal.id = 'order-modal';
     modal.className = 'order-modal';
-    modal.setAttribute('aria-hidden', 'true');
+    // modal.setAttribute('aria-hidden', 'true');
     modal.innerHTML = [
       '<div class="order-modal-backdrop" data-close-modal></div>',
       '<div class="order-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="order-modal-title">',
@@ -655,7 +657,7 @@
     widget.id = 'wa-widget';
     widget.className = 'wa-widget';
     widget.innerHTML = [
-      '<div class="wa-widget-panel" id="wa-widget-panel" aria-hidden="true">',
+      '<div class="wa-widget-panel" id="wa-widget-panel">',
       '  <button type="button" class="wa-widget-panel-close" aria-label="Tutup">&times;</button>',
       '  <div class="wa-widget-panel-header">',
       '    <div class="wa-widget-avatar">',
@@ -726,7 +728,7 @@
     var modal = document.createElement('div');
     modal.id = 'wa-preview-modal';
     modal.className = 'wa-preview-modal';
-    modal.setAttribute('aria-hidden', 'true');
+    // modal.setAttribute('aria-hidden', 'true');
     modal.innerHTML = [
       '<div class="wa-preview-backdrop" data-wa-close></div>',
       '<div class="wa-preview-dialog" role="dialog" aria-modal="true" aria-labelledby="wa-preview-title">',
