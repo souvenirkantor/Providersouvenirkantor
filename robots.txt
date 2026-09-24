@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /forms/
 
-Sitemap: https://providersouvenirkantor.web.id/sitemap.xml
+Sitemap: https://providerkantor.web.id/sitemap.xml
