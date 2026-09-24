@@ -223,7 +223,7 @@ h6 {
   margin-right: 8px;
 }
 
-.header .logo .sitename {
+.header .logo h1 {
   font-size: 20px;
   margin: 0;
   font-weight: 500;
@@ -364,7 +364,7 @@ h6 {
   }
 
   .header .logo .sitename,
-  .header .logo .sitename {
+  .header .logo h1 {
     display: inline-block;
     font-size: 14px;
     margin-left: 4px;
@@ -418,7 +418,7 @@ h6 {
 /* Layar sangat sempit (≤480px): sembunyikan teks brand, tampilkan logo saja */
 @media (max-width: 480px) {
   .header .logo .sitename,
-  .header .logo .sitename {
+  .header .logo h1 {
     display: none;
   }
 
@@ -1435,8 +1435,7 @@ body:not(.aos-initialized) [data-aos] {
   padding: clamp(64px, 9vw, 110px) 0;
 }
 
-.page-title .heading h1,
-.page-title .heading h2 {
+.page-title .heading h1 {
   font-size: clamp(2rem, 3.6vw, 2.9rem);
   font-weight: 700;
   line-height: 1.2;
@@ -1462,8 +1461,7 @@ body:not(.aos-initialized) [data-aos] {
     padding: 56px 0 40px;
   }
 
-  .page-title .heading h1,
-.page-title .heading h2 {
+  .page-title .heading h1 {
     font-size: 2rem;
   }
 }
@@ -1631,7 +1629,7 @@ section,
     border-radius: 18px;
   }
 
-  .header .logo .sitename {
+  .header .logo h1 {
     font-size: 18px;
   }
 
@@ -3690,7 +3688,7 @@ section,
   font-weight: 300;
 }
 
-.service-details .service-hero h2 {
+.service-details .service-hero h1 {
   font-size: clamp(2.1rem, 3.2vw, 3.3rem);
   font-weight: 300;
   line-height: 1.2;
@@ -4123,7 +4121,7 @@ section,
 }
 
 @media (max-width: 768px) {
-  .service-details .service-hero h2 {
+  .service-details .service-hero h1 {
     font-size: 2.5rem;
   }
 
@@ -5352,7 +5350,7 @@ html.order-modal-open, body.order-modal-open {
 .header .header-container { padding: 6px 12px; gap: 10px; }
 .header .logo img { max-height: 28px; }
 /* Desktop: max-width cukup untuk 'CorporateGifts ID' */
-.header .logo .sitename { font-size: 18px; max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.header .logo h1 { font-size: 18px; max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .header .navmenu { min-width: 0; }
 .navmenu ul { gap: 6px; }
 .navmenu a, .navmenu a:focus { font-size: 13px !important; padding: 6px 8px !important; white-space: nowrap; }
@@ -5361,21 +5359,21 @@ html.order-modal-open, body.order-modal-open {
 /* Tablet (769px–1199px): sedikit lebih kecil tapi masih tampil penuh */
 @media (max-width: 1199px) {
   .navmenu a, .navmenu a:focus { font-size: 14px !important; padding: 8px 10px !important; }
-  .header .logo .sitename { font-size: 15px; max-width: 180px; }
+  .header .logo h1 { font-size: 15px; max-width: 180px; }
   .header .logo img { max-height: 28px; }
 }
 
 /* Mobile (≤768px): override compact rule agar tidak konflik */
 @media (max-width: 768px) {
   .header .header-container { padding: 6px 10px; gap: 6px; }
-  .header .logo .sitename { font-size: 14px; max-width: 140px; }
+  .header .logo h1 { font-size: 14px; max-width: 140px; }
   .header .logo img { max-height: 26px; }
   .header .btn-getstarted { padding: 6px 12px !important; font-size: 12px !important; }
 }
 
 /* Layar sangat kecil (≤480px): sembunyikan teks, logo saja */
 @media (max-width: 480px) {
-  .header .logo .sitename { display: none; }
+  .header .logo h1 { display: none; }
   .header .btn-getstarted { padding: 5px 10px !important; font-size: 11px !important; }
 }
 
